@@ -1,120 +1,120 @@
 :root {
-  --btn-red: rgb(232, 63, 87);
-  --bg-green: rgb(61, 224, 126);
-  --fot-grey: rgb(51, 51, 51);
+    --btn-red: rgb(232, 63, 87);
+    --bg-green: rgb(61, 224, 126);
+    --fot-grey: rgb(51, 51, 51);
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 header {
-  display: grid;
-  background-color: var(--bg-green);
-  overflow: hidden;
-  height: 50svh;
-  font-size: 3em;
-  align-content: space-between;
-  
-  :first-child {
-    margin: 1.5rem 0 0 1.5rem;
-  }
+    display: grid;
+    background-color: var(--bg-green);
+    overflow: hidden;
+    height: 50svh;
+    font-size: 3em;
+    align-content: space-between;
 
-  :nth-child(n + 2) {
-    justify-self: center;
-  }
+    :first-child {
+        margin: 1.5rem 0 0 1.5rem;
+    }
 
+    :nth-child(n + 2) {
+        justify-self: center;
+    }
 }
 
 main {
-  padding: 64px 0 96px 0;
-  display: grid;
-  grid-template-columns: repeat(6, 100px);
-  background-color: black;
-  justify-content: center;
-  align-content: start;
-  gap: 64px 24px;
-
-  .item {
+    padding: 64px 0 96px 0;
     display: grid;
-    align-items: flex-start;
-    justify-items: start;
-    color: white;
-    grid-column: span 2;
-    grid-template-rows: auto 2em 1fr 2em;
+    grid-template-columns: repeat(6, 100px);
+    background-color: black;
+    justify-content: center;
+    align-content: start;
+    gap: 64px 24px;
 
-    > span {
-      color: white;
-      font-size: 1.4em;
-      font-weight: bold;
-      margin-top: 0.5em;
+    .item {
+        display: grid;
+        align-items: flex-start;
+        justify-items: start;
+        color: white;
+        grid-column: span 2;
+        grid-template-rows: auto 2em 1fr 2em;
+
+        > span {
+            color: white;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-top: 0.5em;
+        }
+
+        > p,
+        > a {
+            font-size: 0.8em;
+        }
+
+        > img {
+            width: 100%;
+        }
+
+        > a {
+            background-color: var(--btn-red);
+            border: none;
+            padding: 0.5em;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+        }
     }
 
-    > p, > a {
-      font-size: 0.8em;
-    }
+    .item:nth-last-child(-n + 2) {
+        background-color: white;
+        padding-bottom: 10px;
+        grid-row: 5;
+        grid-column: span 3;
+        grid-template-rows: auto 3.5rem 1fr 2rem;
 
-    > img {
-      width: 100%;
+        > span {
+            color: black;
+            margin: 20px 10px;
+        }
+        > p {
+            color: black;
+            margin: 0 10px 30px 10px;
+        }
+        > a {
+            margin-left: 10px;
+            padding: 10px 20px;
+        }
     }
-
-    > a {
-      background-color: var(--btn-red);
-      border: none;
-      padding: 0.5em;
-      border-radius: 5px;
-      color: white;
-      text-decoration: none;
-    }
-  }
-
-  .item:nth-last-child(-n + 2) {
-    background-color: white;
-    padding-bottom: 10px;
-    grid-row: 5;
-    grid-column: span 3;
-    grid-template-rows: auto 3.5rem 1fr 2rem;
-
-    > span {
-      color: black;
-      margin: 20px 10px;
-    }
-    > p {
-      color: black;
-      margin: 0 10px 30px 10px;
-    }
-    > a {
-      margin-left: 10px;
-      padding: 10px 20px;
-    }
-  }
 }
 
 footer {
-  display: grid;
-  padding: 40px 0 80px 0;
-  background-color: rgb(51, 51, 51);
-  grid-template-columns: repeat(3, 230px);
-  color: white;
-  font-size: 0.8em;
-  place-content: center;
-  justify-items: left;
-  gap: 0.3rem;
+    display: grid;
+    padding: 40px 0 80px 0;
+    background-color: rgb(51, 51, 51);
+    grid-template-columns: repeat(3, 230px);
+    color: white;
+    font-size: 0.8em;
+    place-content: center;
+    justify-items: left;
+    gap: 0.3rem;
 
-  > h2 {
-    font-size: 1.8em;
-    margin: 0 0 10px 0;
-  }
-
-  > .social-media {
-    grid-row: span 2;
-
-    > object {
-      height: 1.8em;
-      margin-left: 6px;
+    > h2 {
+        font-size: 1.8em;
+        margin: 0 0 10px 0;
     }
-  }
+
+    > .social-media {
+        grid-row: span 2;
+
+        > object {
+            height: 1.8em;
+            margin-left: 6px;
+        }
+    }
 }
 
 .checkout {
@@ -143,14 +143,14 @@ footer {
             color: black;
         }
 
-        > a, span {
+        > a,
+        span {
             margin-left: 10px;
         }
 
         > a {
-          padding: 1em;
+            padding: 1em;
         }
-
     }
 
     > span {
@@ -193,5 +193,4 @@ footer {
         font-weight: bold;
         border-top: 2px solid gray;
     }
-
 }
