@@ -1,33 +1,30 @@
+:root {
+  --btn-red: rgb(232, 63, 87);
+  --bg-green: rgb(61, 224, 126);
+  --fot-grey: rgb(51, 51, 51);
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
 header {
-  display: flex;
-  place-content: center;
-  background: rgb(61, 224, 126);
+  display: grid;
+  background-color: var(--bg-green);
   overflow: hidden;
   height: 50svh;
   font-size: 3em;
-
-  > img {
-    position: relative;
-    top: 70%;
+  align-content: space-between;
+  
+  :first-child {
+    margin: 1.5rem 0 0 1.5rem;
   }
 
-  > object {
-    position: absolute;
-    width: 2rem;
-    left: 1rem;
-    top: 1rem;
+  :nth-child(n + 2) {
+    justify-self: center;
   }
 
-  > h1 {
-    position: absolute;
-    top: calc(30% - 2em);
-    font-size: 2em;
-  }
 }
 
 main {
@@ -41,13 +38,11 @@ main {
 
   .item {
     display: grid;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-between;
     align-items: flex-start;
     justify-items: start;
     color: white;
     grid-column: span 2;
+    grid-template-rows: auto 2em 1fr 2em;
 
     > span {
       color: white;
@@ -56,11 +51,7 @@ main {
       margin-top: 0.5em;
     }
 
-    > p {
-      font-size: 0.8em;
-    }
-
-    > a {
+    > p, > a {
       font-size: 0.8em;
     }
 
@@ -69,7 +60,7 @@ main {
     }
 
     > a {
-      background-color: rgb(255, 90, 120);
+      background-color: var(--btn-red);
       border: none;
       padding: 0.5em;
       border-radius: 5px;
@@ -78,12 +69,12 @@ main {
     }
   }
 
-  .item:nth-last-child(2),
-  .item:nth-last-child(1) {
+  .item:nth-last-child(-n + 2) {
     background-color: white;
     padding-bottom: 10px;
     grid-row: 5;
     grid-column: span 3;
+    grid-template-rows: auto 3.5rem 1fr 2rem;
 
     > span {
       color: black;
@@ -103,14 +94,13 @@ main {
 footer {
   display: grid;
   padding: 40px 0 80px 0;
-  background-color: rgb(55, 55, 55);
+  background-color: rgb(51, 51, 51);
   grid-template-columns: repeat(3, 230px);
   color: white;
   font-size: 0.8em;
-  align-items: center;
-  justify-content: center;
+  place-content: center;
   justify-items: left;
-  align-content: center;
+  gap: 0.3rem;
 
   > h2 {
     font-size: 1.8em;
@@ -128,39 +118,37 @@ footer {
 }
 
 .checkout {
-
     grid-template-columns: repeat(6, calc(1fr * 0.8));
     color: white;
     gap: 0;
 
     > h2 {
-        color: white;
         grid-column: span 6;
-        padding: 0;
-        margin: 0 0 0.5em 0;
-        font-weight: normal;
     }
 
     > .item:nth-last-of-type(2) {
-        margin: 10px 15px 30px 0
+        margin: 10px 15px 30px 0;
     }
 
     > .item:nth-last-of-type(1) {
-        margin: 10px 0 30px 15px
+        margin: 10px 0 30px 15px;
     }
 
     > .item {
         grid-column: span 3;
+        grid-template-rows: auto 3em 3em;
         background-color: white;
-        padding-bottom: 10px;
 
         > span {
             color: black;
-            margin-bottom: 0.2em;
         }
 
         > a, span {
             margin-left: 10px;
+        }
+
+        > a {
+          padding: 1em;
         }
 
     }
@@ -172,8 +160,7 @@ footer {
 
     > a {
         grid-column: span 6;
-        background-color: rgb(255, 90, 120);
-        border: none;
+        background-color: var(--btn-red);
         padding: 0.5em;
         border-radius: 5px;
         color: white;
@@ -189,7 +176,7 @@ footer {
 
     > span:nth-child(-n + 6) {
         background-color: rgb(78, 5, 5);
-        padding: 2px 0;
+        padding: 4px 0;
         font-size: 0.8em;
     }
 
